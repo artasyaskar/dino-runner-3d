@@ -22,15 +22,13 @@ loadingManager.onError = (url) => {
 const canvas = document.querySelector('#gameCanvas');
 
 // Create WebGL renderer with antialias enabled for smoother edges
-const renderer = new THREE.WebGLRenderer({
-  canvas,
+const renderer = new THREE.WebGLRenderer({ 
+  canvas: canvas,
   antialias: true,
-  alpha: false,
+  powerPreference: 'high-performance'
 });
-
-// Set initial size and pixel ratio for crisp graphics on all screens
 renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.setPixelRatio(window.devicePixelRatio);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
 // Instantiate and initialize the game manager with loading manager
 const gameManager = new GameManager(renderer, loadingManager);

@@ -58,6 +58,7 @@ export class GameManager {
       1000 // increased far plane for large sky sphere
     );
     this.camera.position.set(0, 2, 6);
+    this.camera.lookAt(0, 1, 0);
   }
 
   _initLighting() {
@@ -68,7 +69,14 @@ export class GameManager {
     // Directional light simulating sun behind clouds
     const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
     dirLight.position.set(5, 10, 7);
+    dirLight.castShadow = true;
+    dirLight.shadow.mapSize.width = 1024;
+    dirLight.shadow.mapSize.height = 1024;
     this.scene.add(dirLight);
+    
+    // Set up shadow properties
+    this.renderer.shadowMap.enabled = true;
+    this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   }
 
   _initFog() {
@@ -128,6 +136,11 @@ export class GameManager {
 
   _initDinosaur() {
     this.dinosaur = createDinosaur();
+    this.dinosaur.traverse((child) => {
+      if (child.isMesh) {
+        child.castShadow = true;
+      }
+    });
     this.scene.add(this.dinosaur);
   }
 
