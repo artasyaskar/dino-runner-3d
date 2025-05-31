@@ -1,0 +1,25 @@
+/* Reset default margin and prevent scrollbars */
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: #87ceeb; /* Sky blue background */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Subtle font for possible future text */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Make canvas fill viewport exactly without scroll */
+canvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background: transparent; /* Ensures no unwanted backgrounds */
+  user-select: none;       /* Disable text selection on canvas */
+  -webkit-touch-callout: none; /* Disable callout on iOS */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
