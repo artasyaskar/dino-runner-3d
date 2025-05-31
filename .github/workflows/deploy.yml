@@ -3,7 +3,10 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # or master, depending on your default branch name
+      - main
+
+permissions:
+  contents: write
 
 jobs:
   build-and-deploy:
@@ -16,10 +19,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-          cache: 'npm'
 
       - name: Install Dependencies
-        run: npm ci
+        run: npm install
 
       - name: Build
         run: npm run build
@@ -29,3 +31,4 @@ jobs:
         with:
           folder: dist
           branch: gh-pages
+          clean: true
