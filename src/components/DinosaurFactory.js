@@ -1,5 +1,7 @@
+import * as THREE from 'three';
+
 // ======= Dinosaur Model Factory =======
-function createDinosaur() {
+export function createDinosaur() {
   const dino = new THREE.Group();
 
   const oliveMaterial = new THREE.MeshStandardMaterial({ color: 0x556b2f });

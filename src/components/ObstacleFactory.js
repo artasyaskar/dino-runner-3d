@@ -1,5 +1,7 @@
+import * as THREE from 'three';
+
 // ======= Cactus Obstacle Factory =======
-function createCactusObstacle() {
+export function createCactusObstacle() {
   const group = new THREE.Group();
 
   const cactusMaterial = new THREE.MeshStandardMaterial({ color: 0x2e8b57 }); // Dark green
