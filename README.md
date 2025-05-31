@@ -1,4 +1,3 @@
-
 # Dino Runner 3D
 
 Welcome to **Dino Runner 3D** — a modern, browser-based endless running game inspired by the classic Chrome offline dinosaur game.  
@@ -26,3 +25,8 @@ This project uses **Three.js** for 3D graphics to bring a fresh visual experienc
 
 ## 📁 Project Structure
 
+- `src/` - Source code files
+  - `components/` - Game components (Dino, Obstacles, etc.)
+  - `styles/` - CSS styles
+- `public/` - Static assets and HTML
+  - `assets/` - Textures and other assets
