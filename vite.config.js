@@ -1,13 +1,20 @@
-// vite.config.js
 import { defineConfig } from 'vite';
+import { resolve } from 'path';
 
 export default defineConfig({
-  base: '/dino-runner-3d/', // GitHub Pages repository name
+  base: '/dino-runner-3d/',
   build: {
     outDir: 'dist',
     emptyOutDir: true,
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html')
+      }
+    }
   },
-  server: {
-    open: true
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, './src')
+    }
   }
 });

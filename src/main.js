@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { GameManager } from './src/components/GameManager.js';  // Note .js extension needed for ES modules
+import { GameManager } from './components/GameManager.js';
 
 // Loading manager to track asset loading progress
 const loadingManager = new THREE.LoadingManager();

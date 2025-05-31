@@ -1,6 +1,8 @@
 {
   "name": "dino-runner-3d",
+  "private": true,
   "version": "1.0.0",
+  "type": "module",
   "description": "A 3D endless runner game featuring a dinosaur using Three.js and Vite",
   "scripts": {
     "dev": "vite",
